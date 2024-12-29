@@ -1,0 +1,208 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background with gradient */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background: linear-gradient(to right, #005f73 0%, #00aaff 50%, #005f73 100%);
+}
+
+body.light-mode .container {
+    background: #fff;
+    color: #333;
+}
+
+body.light-mode button {
+    background-color: #005f73;
+    color: white;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: linear-gradient(to right, #333 0%, #222 50%, #333 100%);
+    color: #ddd;
+}
+
+body.dark-mode .container {
+    background: #444;
+    color: #ddd;
+}
+
+body.dark-mode button {
+    background-color: #666;
+    color: white;
+}
+
+/* Main container */
+.container {
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Title */
+h1 {
+    color: #005f73;
+    margin-bottom: 10px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+/* Shield symbol below the title */
+.shield {
+    font-size: 24px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: text-shadow 0.3s ease;
+}
+
+/* Shadow effect on hover over the shield */
+.shield:hover {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+/* Input container */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Password input */
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus animation */
+input[type="password"]:focus {
+    border-color: #005f73;
+}
+
+/* Strength bar */
+.strength-bar {
+    width: 0;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Password strength text */
+.strength-text {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Password strength styles */
+.weak {
+    color: #ff3b3b;
+}
+
+.moderate {
+    color: #ff9f00;
+}
+
+.strong {
+    color: #00a600;
+}
+
+/* Suggested password section */
+.suggestion-container {
+    margin-top: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+input#generated-password {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f7fb;
+    color: #333;
+    outline: none;
+    cursor: not-allowed;
+}
+
+/* Button container */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #005f73;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 48%;
+}
+
+/* Hover effect on buttons */
+button:hover {
+    background-color: #008c94;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Dark mode toggle button */
+#mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #005f73;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the dark mode toggle */
+#mode-toggle:hover {
+    background-color: #008c94;
+}
+
+/* Text for mode */
+#mode-text {
+    font-size: 16px;
+    margin-top: 15px;
+}
