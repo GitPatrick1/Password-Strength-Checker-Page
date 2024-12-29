@@ -9,23 +9,56 @@
 <body>
     <div class="container">
         <h1>Password Strength Checker</h1>
-        <span class="shield">🛡️</span> <!-- Shield symbol under the title -->
-        <div class="input-container">
+        <span class="shield">🛡️</span>
+        
+        <!-- Input container with toggle password button -->
+        <div class="input-container" style="display: flex; align-items: center; gap: 5px;">
             <input type="password" id="password" placeholder="Enter your password" oninput="checkPasswordStrength()">
-            <div id="strength-bar" class="strength-bar"></div>
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">👁️</button>
         </div>
+        
+        <!-- Strength bar -->
+        <div id="strength-bar" class="strength-bar"></div>
         <div id="password-strength" class="strength-text"></div>
 
         <!-- Password suggestion section -->
         <div class="suggestion-container">
             <label for="generated-password">Suggested password:</label>
-            <input type="text" id="generated-password" readonly>
-            <div class="buttons-container">
-                <button id="generate-btn" onclick="generatePassword()">Generate</button>
-                <button id="copy-btn" onclick="copyPassword()">Copy</button>
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <input type="text" id="generated-password" readonly>
+                <div class="buttons-container">
+                    <button id="generate-btn" onclick="generatePassword()">Generate</button>
+                    <button id="copy-btn" onclick="copyPassword()">Copy</button>
+                </div>
             </div>
         </div>
+
+        <!-- Rating Section -->
+        <div class="rating-container">
+            <h3>Rate your experience</h3>
+            <div class="stars">
+                <span class="star" onclick="rate(1)" data-value="1">★</span>
+                <span class="star" onclick="rate(2)" data-value="2">★</span>
+                <span class="star" onclick="rate(3)" data-value="3">★</span>
+                <span class="star" onclick="rate(4)" data-value="4">★</span>
+                <span class="star" onclick="rate(5)" data-value="5">★</span>
+            </div>
+            <div id="rating-value">You rated: 0 stars</div>
+        </div>
+
+        <!-- Feedback section -->
+        <div class="feedback-container">
+            <h3>Leave feedback</h3>
+            <input type="email" id="user-email" placeholder="Your email">
+            <textarea placeholder="Your feedback"></textarea>
+            <button id="submit-feedback">Submit Feedback</button>
+        </div>
     </div>
+
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- External JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
