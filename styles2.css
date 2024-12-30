@@ -1,0 +1,116 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background with darker gradient */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #0d0d0d, #1c1c1c); /* Sfumatura dal nero al grigio scuro */
+    color: #fff; /* Testo bianco per contrastare con lo sfondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Main container */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+    border: 2px solid #4285F4; /* Blu di Google per il bordo */
+}
+
+/* Title */
+h1 {
+    color: #4285F4; /* Blu di Google */
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+/* Form */
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #34A853; /* Verde di Google */
+}
+
+/* Login button */
+button {
+    background-color: #4285F4; /* Azzurro di Google */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #66A8F0; /* Azzurro chiaro al passaggio del mouse */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Hidden message */
+.hidden {
+    display: none;
+}
+
+/* Warning message */
+#phishing-warning {
+    margin-top: 20px;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Go back button */
+#go-back-btn {
+    background-color: #4285F4; /* Azzurro di Google */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+#go-back-btn:hover {
+    background-color: #66A8F0; /* Azzurro chiaro al passaggio del mouse */
+    transform: scale(1.05);
+}
+
+#go-back-btn:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Google</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Login to your Google Account 🔐</h1>
+        <p>Please enter your credentials to access your account.</p>
+
+        <!-- Fake login form -->
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" id="login-btn">Login</button>
+        </form>
+
+        <!-- Phishing warning message -->
+        <div id="phishing-warning" class="hidden">
+            <p><strong>Warning:</strong> You have clicked on a suspicious link! Never enter your credentials on a page you do not recognize. This is a simulation to educate about online security.</p>
+        </div>
+    </div>
+
+    <a href="index.html">
+        <button id="go-back-btn">Go Back</button>
+    </a>
+
+    <script>
+        // Intercept login attempt to show phishing warning
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting
+            document.getElementById('phishing-warning').classList.remove('hidden');
+            document.getElementById('login-form').reset(); // Reset the form
+        });
+    </script>
+</body>
+</html>
