@@ -244,3 +244,27 @@ textarea {
     font-size: 16px;
     color: #333;
 }
+/* Bottone per andare alla seconda pagina */
+a button {
+    background-color: #3a8d8f; /* Colore di sfondo più chiaro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Colore di sfondo più scuro al passaggio del mouse */
+a button:hover {
+    background-color: #006d6f; /* Colore di sfondo scuro */
+}
+
+/* Effetto di clic sul bottone */
+a button:active {
+    transform: scale(0.95);
+}
