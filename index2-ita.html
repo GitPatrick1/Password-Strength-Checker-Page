@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso Google</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Accedi al tuo account Google 🔐</h1>
+        <p>Inserisci le tue credenziali per accedere al tuo account.</p>
+
+        <!-- Modulo di login fittizio -->
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Inserisci la tua email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Inserisci la tua password">
+            </div>
+            <button type="submit" id="login-btn">Accedi</button>
+        </form>
+
+        <!-- Messaggio di avviso phishing -->
+        <div id="phishing-warning" class="hidden">
+            <p><strong>Attenzione:</strong> Hai cliccato su un link sospetto! Non inserire mai le tue credenziali su una pagina che non riconosci. Questa è una simulazione per educare sulla sicurezza online.</p>
+        </div>
+    </div>
+
+    <!-- Bottone per tornare indietro -->
+    <a href="index-ita.html">
+        <button id="go-back-btn">Torna Indietro</button>
+    </a>
+    
+    <!-- Bottone per cambiare la lingua -->
+    <button id="change-language-button" onclick="window.location.href='index2.html';">English</button>
+
+    <script>
+        // Intercetta il tentativo di login per mostrare l'avviso di phishing
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impedisce l'invio del modulo
+            document.getElementById('phishing-warning').classList.remove('hidden');
+            document.getElementById('login-form').reset(); // Reset del modulo
+        });
+    </script>
+</body>
+</html>

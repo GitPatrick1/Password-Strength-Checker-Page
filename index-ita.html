@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo della Forza della Password</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controllo della Forza della Password</h1>
+        <span class="shield">🛡️</span>
+        
+        <!-- Contenitore per l'input con il bottone per mostrare/nascondere la password -->
+        <div class="input-container" style="display: flex; align-items: center; gap: 5px;">
+            <input type="password" id="password" placeholder="Inserisci la tua password" oninput="checkPasswordStrength()">
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">👁️</button>
+        </div>
+        
+        <!-- Barra della forza -->
+        <div id="strength-bar" class="strength-bar"></div>
+        <div id="password-strength" class="strength-text"></div>
+
+        <!-- Sezione per il suggerimento della password -->
+        <div class="suggestion-container">
+            <label for="generated-password">Password suggerita:</label>
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <input type="text" id="generated-password" readonly>
+                <div class="buttons-container">
+                    <button id="generate-btn" onclick="generatePassword()">Genera</button>
+                    <button id="copy-btn" onclick="copyPassword()">Copia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione per la valutazione -->
+        <div class="rating-container">
+            <h3>Valuta la tua esperienza</h3>
+            <div class="stars">
+                <span class="star" onclick="rate(1)" data-value="1">★</span>
+                <span class="star" onclick="rate(2)" data-value="2">★</span>
+                <span class="star" onclick="rate(3)" data-value="3">★</span>
+                <span class="star" onclick="rate(4)" data-value="4">★</span>
+                <span class="star" onclick="rate(5)" data-value="5">★</span>
+            </div>
+            <div id="rating-value">Hai valutato: 0 stelle</div>
+        </div>
+
+        <!-- Sezione per il feedback -->
+        <div class="feedback-container">
+            <h3>Lascia un feedback</h3>
+            <input type="email" id="user-email" placeholder="La tua email">
+            <textarea placeholder="Il tuo feedback"></textarea>
+            <button id="submit-feedback">Invia Feedback</button>
+        </div>
+
+        <!-- Bottone per navigare alla seconda pagina (versione italiana) -->
+        <a href="index2-ita.html">
+            <button>Pagina Successiva</button>
+        </a>
+
+        <!-- Bottone per passare alla versione in inglese -->
+        <button id="change-language-button" onclick="window.location.href='index.html';">English</button>
+
+    </div>
+
+    <!-- Script di EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- JavaScript Esterno -->
+    <script src="script.js"></script>
+</body>
+</html>
